@@ -31,4 +31,4 @@ model_artifacts/
 # Distribution / packaging
 dist/
 build/
-*.egg-info/
+*.egg-info/data/processed/

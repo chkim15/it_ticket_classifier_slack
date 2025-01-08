@@ -22,3 +22,11 @@ select CONVERSATION_ID, SIMPLIFIED_CATEGORY, CONVERSATION_CHANNEL, MESSAGE_PLUS_
 SNOWFLAKE.CORTEX.EMBED_TEXT_1024('multilingual-e5-large', MESSAGE_PLUS_TRIAGE) as multilingual_e5large_embedding
 from CLEAN_DATA_10WORDS_Final
 """
+
+FETCH_EMBEDDINGS_QUERY = """
+select * from SNOWFLAKE_EMBEDDING_TRIAGE_FINAL
+"""
+
+FETCH_VALIDATED_DATA_QUERY = """
+select * from class_shared_data.class_dataset.conversation_dataset
+"""
