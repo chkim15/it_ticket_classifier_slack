@@ -1,0 +1,1 @@
+[{"X_shape":[69996,1024],"y_shape":[69996],"class_distribution":{"OTHER":25000,"add_license OR remove_license":2928,"add_user OR remove_user":8237,"add_user_to_channel OR remove_user_from_channel":3808,"os_update":8161,"password_reset":15340,"reset_mfa":1824,"shipping_request":4698},"upsampling_num":45000,"downsampling_num":25000,"timestamp":"2025-01-08T11:28:16.172780"}]

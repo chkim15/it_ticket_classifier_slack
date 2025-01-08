@@ -32,3 +32,6 @@ model_artifacts/
 dist/
 build/
 *.egg-info/data/processed/
+
+data/models/
+*.pkl

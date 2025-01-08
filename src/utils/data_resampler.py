@@ -96,6 +96,10 @@ class DataResampler:
         balanced_counts = Counter(y_balanced)
         logger.info(f"Final class distribution: {dict(balanced_counts)}")
 
+        # Fit label encoder before returning
+        self.label_encoder = LabelEncoder()
+        self.label_encoder.fit(y_balanced)
+
         return X_balanced, y_balanced
 
     def save_resampled_data(self, X_balanced, y_balanced, save_dir=None):
