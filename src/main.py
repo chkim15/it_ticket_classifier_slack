@@ -31,6 +31,10 @@ def main():
         logger.info("Writing processed data back to Snowflake...")
         snow_conn.write_to_snowflake(processed_data, "CLEAN_DATA_10WORDS_FINAL")
 
+        # Create embeddings
+        logger.info("Creating Snowflake embeddings...")
+        snow_conn.execute_query(CREATE_EMBEDDINGS_QUERY)
+
         logger.info("Processing completed successfully!")
 
     except Exception as e:
