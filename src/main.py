@@ -1,6 +1,8 @@
 from utils.snowflake_connector import SnowflakeConnector
 from utils.data_preprocessor import DataPreprocessor
 from utils.data_validator import DataValidator
+from utils.data_resampler import DataResampler
+
 from config.sql_queries import (INITIAL_CLEAN_QUERY, FETCH_CLEAN_DATA_QUERY, 
                               CREATE_EMBEDDINGS_QUERY, FETCH_EMBEDDINGS_QUERY,
                               FETCH_VALIDATED_DATA_QUERY)
@@ -51,10 +53,17 @@ def main():
         # Save processed data
         logger.info("Saving processed data...")
         embeddings_path, csv_path = validator.save_processed_data(processed_df)
+
+        # Resample data
+        logger.info("Starting data resampling...")
+        resampler = DataResampler()
+        df = resampler.load_data()
+        X_balanced, y_balanced = resampler.resample_data(df)
         
         logger.info(f"Processing completed successfully!")
         logger.info(f"Embeddings saved to: {embeddings_path}")
         logger.info(f"Cleaned data saved to: {csv_path}")
+        logger.info(f"Resampling completed. Final shape: {X_balanced.shape}")
 
     except Exception as e:
         logger.error(f"An error occurred: {str(e)}")
