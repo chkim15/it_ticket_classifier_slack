@@ -1,6 +1,6 @@
 from utils.snowflake_connector import SnowflakeConnector
 from utils.data_preprocessor import DataPreprocessor
-from config.sql_queries import INITIAL_CLEAN_QUERY, FETCH_CLEAN_DATA_QUERY
+from config.sql_queries import INITIAL_CLEAN_QUERY, FETCH_CLEAN_DATA_QUERY, CREATE_EMBEDDINGS_QUERY
 import logging
 from pathlib import Path
 
