@@ -36,3 +36,6 @@ data/processed/
 data/processed/resampled/
 data/models/
 *.pkl
+*.npy
+data/processed/resampled/X_balanced.npy
+data/processed/multilingual_embeddings.npy
