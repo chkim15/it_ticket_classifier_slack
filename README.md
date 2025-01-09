@@ -151,10 +151,10 @@ Under "OAuth & Permissions":
 
 ##### Environment Setup
 Store these in `.env`: 
-SLACK_BOT_TOKEN=xoxb-your-token 
-SLACK_CLIENT_ID=your-client-id 
-SLACK_CLIENT_SECRET=your-client-secret 
-SLACK_SIGNING_SECRET=your-signing-secret 
+* SLACK_BOT_TOKEN=xoxb-your-token 
+* SLACK_CLIENT_ID=your-client-id 
+* SLACK_CLIENT_SECRET=your-client-secret 
+* SLACK_SIGNING_SECRET=your-signing-secret 
 
 ##### Key Components
 1. Slack Handler (`src/api/services/slack_handler.py`)
