@@ -31,7 +31,8 @@ model_artifacts/
 # Distribution / packaging
 dist/
 build/
-*.egg-info/data/processed/
 
+data/processed/
+data/processed/resampled/
 data/models/
 *.pkl
