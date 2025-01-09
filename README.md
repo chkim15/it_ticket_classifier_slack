@@ -21,7 +21,7 @@ Built an end-to-end machine learning system that:
 
 ![Workflow Diagram](assets/workflow.svg)
 
-#### Project Structure
+### Project Folder Structure
 
 ```
 .
