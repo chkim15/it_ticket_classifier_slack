@@ -1,4 +1,4 @@
-> 📖 Check out the detailed blog post on Medium to learn more!
+> 📖 Check out this blog post on Medium to learn more!
 
 [![Read Full Article](https://img.shields.io/badge/📖%20Medium-From%20Data%20to%20Automation:%20Revolutionizing%20IT%20Support-black?style=for-the-badge&logo=medium)](https://medium.com/analytics-in-action-columbia-business-school/from-data-to-automation-revolutionizing-it-support-at-electric-4661ab08cf57)
 
