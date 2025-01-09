@@ -42,6 +42,7 @@ from pathlib import Path
 import logging
 import hmac
 import hashlib
+import json
 
 # Add project root to Python path (keep this at the top)
 project_root = str(Path(__file__).parent.parent.parent)
@@ -125,6 +126,28 @@ def predict():
 @app.route('/test', methods=['GET'])
 def test():
     return jsonify({'status': 'working'})
+
+@app.route('/slack/actions', methods=['POST'])
+def slack_actions():
+    # Parse the request payload
+    data = json.loads(request.form.get('payload'))
+    
+    action_id = data['actions'][0]['action_id']
+    channel_id = data['channel']['id']
+    user_id = data['user']['id']
+    
+    if action_id == 'correct_classification':
+        slack_handler.client.chat_postMessage(
+            channel=channel_id,
+            text=f"Thanks! I'll process your request right away."
+        )
+    elif action_id == 'need_human':
+        slack_handler.client.chat_postMessage(
+            channel=channel_id,
+            text=f"I'll connect you with a human agent shortly. <@{user_id}>"
+        )
+    
+    return jsonify({'status': 'ok'})
 
 if __name__ == '__main__':
     app.run(debug=True, port=8000, host='0.0.0.0')
