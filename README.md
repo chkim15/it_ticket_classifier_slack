@@ -25,14 +25,7 @@ Built an end-to-end machine learning system that:
 * Created SQL queries to filter and clean ticket data
 * Implemented conversation message handling
 
-```sql
-# Example SQL filtering
-SELECT *
-FROM class_shared_data.class_dataset.conversation_dataset
-WHERE VALIDATED_CATEGORY = True
-```
-
-## Project Structure
+#### Project Structure
 
 ```
 .
@@ -144,8 +137,8 @@ Under "OAuth & Permissions":
 2. Turn on "Enable Events" 
 3. Add Request URL: `https://your-domain/slack/events`
 4. Subscribe to bot events:
-  * message.im
-  * message.channels
+    * message.im
+    * message.channels
 
 #### 2. Core Components
 
