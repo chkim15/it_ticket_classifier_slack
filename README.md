@@ -17,13 +17,9 @@ Built an end-to-end machine learning system that:
 
 ## Implementation Journey
 
-### 1. Data Pipeline Development
+### Project Workflow
 
-#### Initial Setup & Data Collection
-
-* Connected to Snowflake data warehouse
-* Created SQL queries to filter and clean ticket data
-* Implemented conversation message handling
+![Workflow Diagram](assets/workflow.svg)
 
 #### Project Structure
 
@@ -60,6 +56,14 @@ Built an end-to-end machine learning system that:
 ├── requirements.txt
 └── README.md
 ```
+
+### 1. Data Pipeline Development
+
+#### Initial Setup & Data Collection
+
+* Connected to Snowflake data warehouse
+* Created SQL queries to filter and clean ticket data
+* Implemented conversation message handling
 
 #### Feature Engineering
 
