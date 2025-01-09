@@ -1,6 +1,6 @@
-> 📖 Check out our detailed blog post on Medium to learn more!
+> 📖 Check out the detailed blog post on Medium to learn more!
 
-[![Medium Blog Post](https://img.shields.io/badge/Medium-Read%20Full%20Article-black?style=flat-square&logo=medium)](https://medium.com/analytics-in-action-columbia-business-school/from-data-to-automation-revolutionizing-it-support-at-electric-4661ab08cf57)
+[![Read Full Article](https://img.shields.io/badge/📖%20Medium-From%20Data%20to%20Automation:%20Revolutionizing%20IT%20Support-black?style=for-the-badge&logo=medium)](https://medium.com/analytics-in-action-columbia-business-school/from-data-to-automation-revolutionizing-it-support-at-electric-4661ab08cf57)
 
 # IT Ticket Classification with Slack Integration
 
@@ -112,7 +112,7 @@ Implemented hybrid resampling strategy:
 * Automated retraining
 
 
-### Appendix
+## Appendix
 
 ### Slack Integration Guide 
 
@@ -125,13 +125,13 @@ Implemented hybrid resampling strategy:
 
 ##### Configure Bot Permissions
 Under "OAuth & Permissions":
-- Add Bot Token Scopes:
- * chat:write        (Send messages)
- * im:history        (View DM history)  
- * channels:history  (View channel messages)
- * im:write         (Send DMs)
-- Install app to workspace
-- Save Bot User OAuth Token (starts with `xoxb-`)
+1. Add Bot Token Scopes:
+    * chat:write        (Send messages)
+    * im:history        (View DM history)  
+    * channels:history  (View channel messages)
+    * im:write         (Send DMs)
+2. Install app to workspace
+3. Save Bot User OAuth Token (starts with `xoxb-`)
 
 ##### Enable Interactivity
 1. Go to "Interactivity & Shortcuts"
@@ -150,19 +150,19 @@ Under "OAuth & Permissions":
 #### 2. Core Components
 
 ##### Environment Setup
-Store these in `.env`:
-SLACK_BOT_TOKEN=xoxb-your-token
-SLACK_CLIENT_ID=your-client-id
-SLACK_CLIENT_SECRET=your-client-secret
-SLACK_SIGNING_SECRET=your-signing-secret
+Store these in `.env`: 
+SLACK_BOT_TOKEN=xoxb-your-token 
+SLACK_CLIENT_ID=your-client-id 
+SLACK_CLIENT_SECRET=your-client-secret 
+SLACK_SIGNING_SECRET=your-signing-secret 
 
 ##### Key Components
-1. **Slack Handler** (`src/api/services/slack_handler.py`)
+1. Slack Handler (`src/api/services/slack_handler.py`)
    - Manages Slack client connection
    - Formats interactive messages
    - Handles message processing
 
-2. **Flask Routes** (`src/api/app.py`)
+2. Flask Routes (`src/api/app.py`)
    - /slack/events: Handles incoming messages
    - /slack/actions: Processes button clicks
 
@@ -183,10 +183,3 @@ python src/api/app.py
 # Terminal 2: Start ngrok
 ngrok http 5000
 ```
-
-#### 5. Production Setup
-
-1. Deploy Flask application
-2. Update Slack URLs with production domain
-3. Set up environment variables
-4. Enable proper security measures
