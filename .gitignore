@@ -26,9 +26,10 @@ __pycache__/
 # Jupyter Notebook
 .ipynb_checkpoints
 
-.DS_Store
 data/processed/
 data/processed/resampled/
 data/models/
 *.pkl
 *.npy
+.DS_Store
+.DS_Store?
