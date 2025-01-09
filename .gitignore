@@ -22,19 +22,13 @@ __pycache__/
 *.log
 *.csv
 *.xlsx
-model_artifacts/
 
 # Jupyter Notebook
 .ipynb_checkpoints
 
-# Distribution / packaging
-dist/
-build/
-
+.DS_Store
 data/processed/
 data/processed/resampled/
 data/models/
 *.pkl
 *.npy
-data/processed/resampled/X_balanced.npy
-data/processed/multilingual_embeddings.npy
