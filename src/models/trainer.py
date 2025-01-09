@@ -71,13 +71,38 @@ class ModelTrainer:
         return X_train, X_test, y_train, y_test
 
     def train(self, X_train, y_train):
-        """Train the model with best parameters."""
+        """Train the model with best parameters and monitor progress."""
         logger.info("Starting model training with best parameters...")
         
-        self.model = LGBMClassifier(**self.best_params)
-        self.model.fit(X_train, y_train)
+        # Create callback for monitoring
+        def callback(env):
+            if env.iteration % 10 == 0:  # Log every 10 iterations
+                logger.info(f"Iteration {env.iteration}, best score so far: {env.evaluation_result_list[0][2]:.4f}")
+
+        # Add callbacks to parameters
+        training_params = self.best_params.copy()
+        training_params['callbacks'] = [callback]
+
+        # Add eval set for monitoring
+        eval_set = [(X_train, y_train)]
+        eval_names = ['training']
+        eval_metrics = ['multi_logloss']  # You can add more metrics like 'multi_error'
+
+        self.model = LGBMClassifier(**training_params)
+        self.model.fit(
+            X_train, 
+            y_train,
+            eval_set=eval_set,
+            eval_names=eval_names,
+            eval_metric=eval_metrics,
+        )
         
         logger.info("Model training completed")
+        
+        # Log final model information
+        logger.info(f"Final model best iteration: {self.model.best_iteration_}")
+        logger.info(f"Feature importance summary: {dict(zip(range(X_train.shape[1]), self.model.feature_importances_))}")
+        
         return self.model
 
     def evaluate(self, X_test, y_test):

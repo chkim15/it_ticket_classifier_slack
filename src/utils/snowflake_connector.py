@@ -21,15 +21,21 @@ class SnowflakeConnector:
             schema=os.getenv('SNOWFLAKE_SCHEMA')
         )
 
-    def execute_query(self, query):
+    def execute_query(self, query, params=None):
+        """Execute a SQL query with optional parameters."""
         try:
             cur = self.conn.cursor()
-            cur.execute(query)
+            if params:
+                cur.execute(query, params)
+            else:
+                cur.execute(query)
+                
             if cur.description:  # If query returns results
                 results = cur.fetchall()
                 column_names = [desc[0] for desc in cur.description]
                 return pd.DataFrame(results, columns=column_names)
             return None
+        
         finally:
             cur.close()
 
